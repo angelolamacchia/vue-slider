@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.slider img {
+    width: 100%;
+}
+
+.slider i.fas {
+    font-size: 30px;
+    padding: 10px;
+    color: tomato;
+    cursor: pointer;
+}
+
+.selector {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.selector i {
+    color: grey;
+    margin: 0 10px;
+}
+
+.selector i.active {
+    background: tomato;
+    border-radius: 50px;
+}
