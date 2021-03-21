@@ -14,6 +14,8 @@ var root = new Vue({
             "img/3.jpg",
             "img/4.png",
         ],
+        playVis: "visible",
+        pauseVis: "hidden",
     },
 
     methods: {
@@ -31,19 +33,24 @@ var root = new Vue({
             }
               
         },
+        circlePhoto: function() {
+            circles.index == counter; 
+        },
+
+        playFn: function() {  
+            this.playVis= "hidden";
+            this.pauseVis= "visible";
+            
+            this.playInterval = setInterval(()=> {this.nextPhoto()}, 3000);
+        },
+        pauseFn: function() {    
+            this.playVis= "visible";
+            this.pauseVis= "hidden";
+
+            clearInterval(this.playInterval);
+        }
         
     },
 
-    // created: function() {
-    //     setInterval(function(){ 
-    //         this.nextPhoto();
-    //     }, 3000);
-    // },
-
-    created: function() {
-        setInterval(()=> {
-            this.nextPhoto();
-        }, 3000);
-    },
-
 });
+

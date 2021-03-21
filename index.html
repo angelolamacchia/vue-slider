@@ -13,19 +13,21 @@
 <body>
     <div id="root" class="container">
         <div class="slider">
-            <div class="prev" @click="prevPhoto">
+            <div class="prev" @click="prevPhoto" v-on:keyup.37="prevPhoto">
                 <i class="fas fa-arrow-circle-left"></i>
             </div>
             <div class="images">
                 <img :src="photos[counter]" alt="">
             </div>
-            <div class="next" @click="nextPhoto">
+            <div class="next" @click="nextPhoto" v-on:keyup.39="nextPhoto">
                 <i class="fas fa-arrow-circle-right"></i>
             </div>
             <div class="selector">
                 <i v-for="(circles, index) in photos" class="far fa-circle" 
-                :class="counter == index ? 'active' : null " ></i>
+                :class="counter == index ? 'active' : null " @click="counter = index"></i>
             </div>
+            <i id="play" class="fas fa-play-circle" :class="playVis" @click="playFn"></i>
+            <i id="pause" class="fas fa-pause-circle" :class="pauseVis" @click="pauseFn"></i>
         </div>   
     </div>
     

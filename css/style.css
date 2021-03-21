@@ -31,7 +31,7 @@
 
 .selector {
     position: absolute;
-    bottom: 80px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.2);
@@ -47,4 +47,19 @@
 .selector i.active {
     background: tomato;
     border-radius: 50px;
+}
+
+#pause, #play {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+#pause.visible, #play.visible {
+    display: block;
+}
+
+#pause.hidden, #play.hidden {
+    display: none;
 }
